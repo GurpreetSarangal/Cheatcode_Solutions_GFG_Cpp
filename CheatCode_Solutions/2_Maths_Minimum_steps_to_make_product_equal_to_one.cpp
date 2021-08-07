@@ -37,3 +37,62 @@ Constraints:
 1 ≤ N ≤ 10^5
 -10^3 ≤ arr[i] ≤ 10^3
 */
+#include<bits/stdc++.h>
+using namespace std;
+
+int MinStep(int a[], int n)
+{
+    // To store the count of 0s, positive
+    // and negative numbers
+    int positive = 0,
+        negative = 0,
+        zero = 0;
+    
+    // To store the number of steps
+    int step = 0;
+    for(int i=0; i<n; i++){
+        // If array element is equal to 0
+        if(a[i] == 0){
+            zero++;
+        }
+
+        // If array element is a negative number
+        else if(a[i] < 0)
+        {
+            negative++;
+
+            // Extra steps needed to make it -1
+            step = step + (-1 - a[i]);
+        }
+
+        // If array element is a positive number
+        else{
+            positive++;
+            // This statement gives us extra steps needed to make it 1
+            step = step + (a[i] - 1);
+        }
+    }
+
+    // At this point array will have only -1s, 0s and 1s
+    if(negative % 2 == 0){
+        // as 
+        step += zero;
+    }
+    else{
+        if(zero>0){
+            step += zero; 
+        }
+        else{
+            step += 2;
+        }
+    }
+}
+
+int main()
+{
+    int a[] = {3,2,5,-2,5,-2};
+    int n = sizeof(a)/sizeof(a[0]);
+    cout<< MinStep(a, n);
+
+    return 0;
+}
