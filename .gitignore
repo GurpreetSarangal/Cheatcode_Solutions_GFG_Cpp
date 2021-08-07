@@ -1,2 +1,4 @@
 *.exe
+# the above statement every file with .exe extention will be ignored
 *.txt
+# the above statement every file with .txt extention will be ignored
