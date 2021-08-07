@@ -31,8 +31,8 @@ using namespace std;
 
 class Solution{
     public:
-        int MissingNumber(vector<int>& array, int n) {
-        // Your code goes here
+        int MissingNumber_MY_WAY(vector<int>& array, int n) {
+        // using technique of the summation formula
         int sum_all = 0;
         for(int num=0; num <= n; num++){
             sum_all += num;
@@ -41,19 +41,26 @@ class Solution{
             sum_all -= ele;
         }
         return sum_all;
-    }
+        }
+        int MissingNumber_XOR(vector<int> array, int n){
+            int a=1, b=array[0];
+            
+        }
 };
 int main()
 {
     int t;
     cin >> t;
     while (t--){
+        cout<<"Input N: ";
         int n;
         cin >> n;
         vector<int> array(n-1);
-        for(int i=0; i<n-1; ++i) cin >> array[i];
+        for(int i=0; i<n-1; ++i) {
+            cout<<"Input " <<i <<" th element : ";
+            cin >> array[i];}
         Solution obj;
-        cout << obj.MissingNumber(array, n)<<"\n";
+        cout << obj.MissingNumber_XOR(array, n)<<"\n";
     }
     return 0;
 }
