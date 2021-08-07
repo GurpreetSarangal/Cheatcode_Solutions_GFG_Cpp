@@ -26,41 +26,48 @@ Constraints:
 1 ≤ N ≤ 10^6
 1 ≤ A[i] ≤ 10^6
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class Solution{
-    public:
-        int MissingNumber_MY_WAY(vector<int>& array, int n) {
+class Solution
+{
+public:
+    int MissingNumber_MY_WAY(vector<int> &array, int n)
+    {
         // using technique of the summation formula
         int sum_all = 0;
-        for(int num=0; num <= n; num++){
+        for (int num = 0; num <= n; num++)
+        {
             sum_all += num;
         }
-        for(int ele: array){
+        for (int ele : array)
+        {
             sum_all -= ele;
         }
         return sum_all;
-        }
-        int MissingNumber_XOR(vector<int> array, int n){
-            int a=1, b=array[0];
-            
-        }
+    }
+    int MissingNumber_XOR(vector<int> array, int n)
+    {
+        int a = 1, b = array[0];
+    }
 };
 int main()
 {
     int t;
     cin >> t;
-    while (t--){
-        cout<<"Input N: ";
+    while (t--)
+    {
+        cout << "Input N: ";
         int n;
         cin >> n;
-        vector<int> array(n-1);
-        for(int i=0; i<n-1; ++i) {
-            cout<<"Input " <<i <<" th element : ";
-            cin >> array[i];}
+        vector<int> array(n - 1);
+        for (int i = 0; i < n - 1; ++i)
+        {
+            cout << "Input " << i << " th element : ";
+            cin >> array[i];
+        }
         Solution obj;
-        cout << obj.MissingNumber_XOR(array, n)<<"\n";
+        cout << obj.MissingNumber_XOR(array, n) << "\n";
     }
     return 0;
 }
