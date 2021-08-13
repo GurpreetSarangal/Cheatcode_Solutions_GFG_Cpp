@@ -48,7 +48,16 @@ public:
     }
     int MissingNumber_XOR(vector<int> array, int n)
     {
-        int a = 1, b = array[0];
+        int a = array[0];
+        int b =1;
+        for(int i=1; i<n; i++){
+            a = a ^ array[i];
+        }
+        for(int i=2; i<=n+1; i++){
+            b = b ^ i;
+        }
+
+        return (a^b);
     }
 };
 int main()
