@@ -47,7 +47,6 @@ int main()
 
     cout<<"Sorted array: \n";
     for(i =0; i<n; i++)
-        printf("%d  ", a[i]);
-
+        cout<<a[i] <<"  ";
     return 0;
 }
