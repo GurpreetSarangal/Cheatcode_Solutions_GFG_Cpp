@@ -31,7 +31,7 @@
 // A Juggling Algorithm
 // This is an extension of method 2. Instead of moving one by one, divie the array in different sets where numer of sets is equal to GCD of n and d and move the elements within sets.
 // If GCD is 1 as is for the abobe example array(n=7 and d=2), the elements will be moved within arr[l+d] to arr[l] and finally store temp at teh right place
-
+// time complexity: O(n)       space complexity:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 
