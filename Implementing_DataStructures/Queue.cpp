@@ -5,6 +5,8 @@
  * 1. Simple Queue
  * 2. Circular Queue
  
+
+ this is the implementation of simple Queue data structure
  */
 #include<bits/stdc++.h>
 using namespace std;
