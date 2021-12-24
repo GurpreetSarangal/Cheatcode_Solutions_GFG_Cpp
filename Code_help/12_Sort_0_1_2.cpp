@@ -1,10 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 void printArray(int arr[],int n){
     for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }cout<<endl;
 }
+
 // sorts an array with 0,1,2 as elements using two pointer approach
 void sort012(int arr[], int n){
     int i=0, j=n-1, t=0;
