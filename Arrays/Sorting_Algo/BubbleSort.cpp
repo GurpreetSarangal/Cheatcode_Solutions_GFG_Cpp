@@ -19,7 +19,7 @@ int main()
     cout<<"Enter number of element a["<<i<<"] = ";
     cin >> n;
     for(i=0; i<n; i++){
-        cout<<
-    }
+        cout<< a[i]<<"  ";
+    }cout<<endl;
     return 0;
 }
