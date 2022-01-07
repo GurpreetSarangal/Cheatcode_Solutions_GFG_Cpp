@@ -63,10 +63,10 @@ bool case_insensitive_palindrome_check(string str){
     return 1;// reaches here only if word is a palidrome
 }
 
-int main()
+int main() 
 {
-    string str = "gurp&%*^prug";
+    string str = "g#$@#@@$$^&*(^u@$@@#$@r@#$@p&%*^p#$@ru$@@#$@#$@g";
     string str2 = "A man, A plan, A canal: Panama";
-    cout<<case_insensitive_palindrome_check(str2);
+    cout<<case_insensitive_palindrome_check(str);
     return 0;
 }
