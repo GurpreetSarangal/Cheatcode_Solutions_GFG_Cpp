@@ -64,6 +64,38 @@ void printArray(vector<vector<int>> arr){
     }
     cout<<endl;
 }
+class Solution {
+public:
+    void nextToBeRotated(pair<int,int> &p, int n){ // find next element to be rotated
+        int a = p.first;
+        p.first = p.second;
+        p.second = n-1-a;
+    }
+    void change(vector<vector<int>>& matrix, pair<int,int> p, int n){
+        int i=0;
+        int temp = matrix[p.first][p.second];
+        while(i<4){ // every time we have to rotate 4 elements
+            nextToBeRotated(p,n); // next element to be rotated
+            int temp2 = matrix[p.first][p.second]; // store its value
+            matrix[p.first][p.second] = temp; // replace it with the previous one
+            temp = temp2; // store the next 'previous' value
+            i++;
+        }
+    }
+    void rotate(vector<vector<int>>& matrix) {
+        const int n = matrix.size();
+        int i = 0;
+		// we take (n^2)/4 elements to start the rotation: 
+		// in example 1 we take 1,2; in example 2: 5,1,9,4.
+        while(i<(n+1)/2-1){ 
+            for(int j=i;j<n-i-1;j++) change(matrix, make_pair(i,j), n);
+            i++;
+        }
+		// if the size of the matrix is odd, we don't need to rotate the last element
+        if(n%2==0) change(matrix, make_pair((n-1)/2,(n-1)/2),n); 
+    }
+    
+};
 
 int main()
 {
