@@ -15,6 +15,7 @@ void rotate(vector<vector<int>>& matrix) {
         }
         printArray(matrix);
 
+        // copy last col in array
         cout<<"copy last col in array"<<endl;
         for(int i=row; i<n-row; i++){
             lastCol[i] = matrix[i][n-row-1];
@@ -65,7 +66,7 @@ void printArray(vector<vector<int>> arr){
     cout<<endl;
 }
 class Solution {
-public:
+
     void nextToBeRotated(pair<int,int> &p, int n){ // find next element to be rotated
         int a = p.first;
         p.first = p.second;
@@ -80,8 +81,10 @@ public:
             matrix[p.first][p.second] = temp; // replace it with the previous one
             temp = temp2; // store the next 'previous' value
             i++;
+            printArray(matrix);
         }
     }
+public:
     void rotate(vector<vector<int>>& matrix) {
         const int n = matrix.size();
         int i = 0;
@@ -116,8 +119,13 @@ public:
 int main()
 {
     vector<vector<int>> mat = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+    // printArray(mat);
+    // rotate(mat);
+    // printArray(mat);
+    Solution obj;
+
     printArray(mat);
-    rotate(mat);
+    obj.rotate(mat);
     printArray(mat);
     return 0;
 }
