@@ -3,5 +3,5 @@
 *.txt
 # the above statement every file with .txt extention will be ignored
 embedded.html
-*.log
-**/.vscode
+.log
+*.vscode
